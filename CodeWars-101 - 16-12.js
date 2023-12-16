@@ -11,3 +11,18 @@ const sumNested = (arr) => {
     return arr[0] + sumNested(arr.slice(1));
   }
 };
+
+// Mutual Recursion
+function F(n) {
+  if (n === 0) {
+    return 1;
+  }
+  return n - M(F(n - 1));
+}
+
+function M(n) {
+  if (n === 0) {
+    return 0;
+  }
+  return n - F(M(n - 1));
+}
